@@ -2,13 +2,13 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.4/fireba
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD_hlzoqHTCpnmCzIui6bdAvm7j8Xn9buQ",
-    authDomain: "asistencia-titulados.firebaseapp.com",
-    databaseURL: "https://asistencia-titulados-default-rtdb.firebaseio.com",
-    projectId: "asistencia-titulados",
-    storageBucket: "asistencia-titulados.appspot.com",
-    messagingSenderId: "438743800689",
-    appId: "1:438743800689:web:444e1026aee91856b1f4d0"
+  apiKey: "AIzaSyD_hlzoqHTCpnmCzIui6bdAvm7j8Xn9buQ",
+  authDomain: "asistencia-titulados.firebaseapp.com",
+  databaseURL: "https://asistencia-titulados-default-rtdb.firebaseio.com",
+  projectId: "asistencia-titulados",
+  storageBucket: "asistencia-titulados.appspot.com",
+  messagingSenderId: "438743800689",
+  appId: "1:438743800689:web:592d30ed94eb9b55b1f4d0"
 };
 
 // Inicializar Firebase
