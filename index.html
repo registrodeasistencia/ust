@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@547&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Strait&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-3 custom-container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-center comfortaa-heading font-weight-bold">ASISTAP WEB</h1>
+            <div class="totals">
+                <div class="total-registered">Registrados: <span id="totalRegistered">0</span></div>
+                <div class="total-present">Presentes: <span id="totalPresent">0</span></div>
+                <div class="total-absent">Ausentes: <span id="totalAbsent">0</span></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Filtros</h4>
+                <div class="form-group">
+                    <label for="filterEstado">Estado:</label>
+                    <select id="filterEstado" class="form-control">
+                        <option value="Todos">Todos</option>
+                        <option value="Presente" selected>Presente</option>
+                        <option value="Ausente">Ausente</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterCarrera">Carrera:</label>
+                    <select id="filterCarrera" class="form-control">
+                        <option value="Todas">Todas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterInstitucion">Institución:</label>
+                    <select id="filterInstitucion" class="form-control">
+                        <option value="Todas">Todas</option>
+                    </select>
+                </div>
+                <div>
+                    <button id="downloadButton" class="btn btn-custom" disabled>Descargar</button>
+                    <button id="refreshButton" class="btn btn-custom ml-2">Actualizar</button>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <input id="searchInput" type="text" class="form-control mb-3" placeholder="Buscar por nombre...">
+                <div class="table-wrapper">
+                    <table id="asistenciaTable" class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th id="sortByName">Nombre</th>
+                                <th id="sortByCarrera">Carrera</th>
+                                <th>Institución</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Contenido generado dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/scripts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</body>
+</html>
