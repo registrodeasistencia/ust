@@ -1,17 +1,21 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js';
+
 import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/10.12.4/firebase-database.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseConfig = {
-  apiKey: "AIzaSyD_hlzoqHTCpnmCzIui6bdAvm7j8Xn9buQ",
-  authDomain: "asistencia-titulados.firebaseapp.com",
-  databaseURL: "https://asistencia-titulados-default-rtdb.firebaseio.com",
-  projectId: "asistencia-titulados",
-  storageBucket: "asistencia-titulados.appspot.com",
-  messagingSenderId: "438743800689",
-  appId: "1:438743800689:web:592d30ed94eb9b55b1f4d0"
-};
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD_hlzoqHTCpnmCzIui6bdAvm7j8Xn9buQ",
+    authDomain: "asistencia-titulados.firebaseapp.com",
+    databaseURL: "https://asistencia-titulados-default-rtdb.firebaseio.com",
+    projectId: "asistencia-titulados",
+    storageBucket: "asistencia-titulados.appspot.com",
+    messagingSenderId: "438743800689",
+    appId: "1:438743800689:web:592d30ed94eb9b55b1f4d0"
+  };
 
-// Inicializar Firebase
+  // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
