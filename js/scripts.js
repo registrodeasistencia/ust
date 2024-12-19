@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const userData = childSnapshot.val();
                 alumnos.push(userData);
                 carrerasSet.add(userData.carrera);
-                institucionesSet.add(userData.institucion);
+                institucionesSet.add(userData.observacion);
 
                 if (userData.estado === 'Presente') {
                     presentCount++;
@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 filterCarrera.appendChild(option);
             });
 
-            institucionesSet.forEach(institucion => {
+            institucionesSet.forEach(observacion => {
                 const option = document.createElement('option');
-                option.value = institucion;
-                option.textContent = institucion;
+                option.value = observacion;
+                option.textContent = observacion;
                 filterInstitucion.appendChild(option);
             });
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const matchName = alumno.nombre.toLowerCase().includes(searchText);
                     const matchEstado = estadoFilter === 'Todos' || alumno.estado === estadoFilter;
                     const matchCarrera = carreraFilter === 'Todas' || alumno.carrera === carreraFilter;
-                    const matchInstitucion = institucionFilter === 'Todas' || alumno.institucion === institucionFilter;
+                    const matchInstitucion = institucionFilter === 'Todas' || alumno.observacion === institucionFilter;
                     return matchName && matchEstado && matchCarrera && matchInstitucion;
                 });
 
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         row.innerHTML = `
                             <td>${alumno.nombre}</td>
                             <td>${alumno.carrera}</td>
-                            <td>${alumno.institucion}</td>
+                            <td>${alumno.observacion}</td>
                             <td class="${alumno.estado === 'Presente' ? 'estado-presente' : alumno.estado === 'Ausente' ? 'estado-ausente' : ''}">
                                 ${alumno.estado}
                             </td>
@@ -146,11 +146,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Crear una hoja de trabajo con los datos de la tabla
                 const wsData = [
-                    ["RUT", "Nombre", "Carrera", "Institución", "Estado"]
+                    ["RUT", "Nombre", "Menu", "Confirmado", "Estado"]
                 ];
 
                 filteredData.forEach(alumno => {
-                    wsData.push([alumno.rut, alumno.nombre, alumno.carrera, alumno.institucion, alumno.estado]);
+                    wsData.push([alumno.rut, alumno.nombre, alumno.carrera, alumno.observacion, alumno.estado]);
                 });
 
                 const ws = XLSX.utils.aoa_to_sheet(wsData);

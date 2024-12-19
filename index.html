@@ -11,9 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@547&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Strait&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Contenedor para la nieve -->
+    <div id="snowflakes-container"></div>
+
     <div class="container mt-3 custom-container">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="text-center comfortaa-heading font-weight-bold">ASISTAP WEB</h1>
+            <!-- Texto decorado -->
+            <h1 class="text-center comfortaa-heading font-weight-bold festive-heading">ASISTAP WEB</h1>
             <div class="totals">
                 <div class="total-registered">Registrados: <span id="totalRegistered">0</span></div>
                 <div class="total-present">Presentes: <span id="totalPresent">0</span></div>
@@ -32,13 +36,13 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="filterCarrera">Carrera:</label>
+                    <label for="filterCarrera">Menú:</label>
                     <select id="filterCarrera" class="form-control">
                         <option value="Todas">Todas</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="filterInstitucion">Institución:</label>
+                    <label for="filterInstitucion">Confirmado:</label>
                     <select id="filterInstitucion" class="form-control">
                         <option value="Todas">Todas</option>
                     </select>
@@ -55,8 +59,8 @@
                         <thead>
                             <tr>
                                 <th id="sortByName">Nombre</th>
-                                <th id="sortByCarrera">Carrera</th>
-                                <th>Institución</th>
+                                <th id="sortByCarrera">Menu</th>
+                                <th>Confirmado</th>
                                 <th>Estado</th>
                             </tr>
                         </thead>
@@ -71,5 +75,6 @@
 
     <script type="module" src="js/scripts.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="js/snowfall.js" defer></script>
 </body>
 </html>
